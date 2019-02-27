@@ -6,7 +6,7 @@ const DogList = (props) => {
   // console.log(props.dogs)
   
   let handleClick = (dog) => {
-console.log('clicked the dog',dog)
+// console.log('clicked the dog',dog)
 props.onClick(dog)
 
   };

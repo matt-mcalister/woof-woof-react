@@ -7,7 +7,8 @@ import DogInfo from "./DogInfo"
 class App extends Component {
   state = {
     dogs: [],
-    clickedDog: {}
+    clickedDog: {},
+    change:{}
   }
   
 componentDidMount(){
@@ -25,9 +26,30 @@ this.setState({
 
 })
 }
+handleChange = (dog) => {
+  console.log('back in app',dog)
+let status = dog.isGoodDog
+console.log(status)
+fetch(`http://localhost:3001/dogs/${dog.id}`,{
+  method:"PATCH",
+    headers:{ "Content-type": "application/json",
+              'Accept': "application/json"
+  },
+  body: JSON.stringify({isGoodDog:!status})
+})
+  .then(res => res.json())
+  .then(changedDog => this.setState({
+    change: changedDog
+
+  }))
+}
+
+
+
 
   render() {
-// console.log(this.state)  
+    console.log(this.state)
+console.log(this.state.change)  
 
     return (
       <div>
@@ -35,7 +57,7 @@ this.setState({
         <div id="dog-summary-container">
           <h1>DOGGO:</h1>
           
-          <DogInfo dog={this.state.clickedDog}/>
+          <DogInfo changed={this.state.change}onChange={this.handleChange}dog={this.state.clickedDog}/>
         </div>
       </div>
     );
