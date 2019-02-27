@@ -6,7 +6,8 @@ import DogInfo from "./DogInfo"
 
 class App extends Component {
   state = {
-    dogs: []
+    dogs: [],
+    clickedDog: {}
   }
   
 componentDidMount(){
@@ -19,11 +20,14 @@ componentDidMount(){
 }
  handleClick = (dogObj) => {
   console.log('in app', dogObj)
+this.setState({
+  clickedDog: dogObj
 
+})
 }
 
   render() {
-console.log(this.handleClick)  
+console.log(this.state)  
 
     return (
       <div>
@@ -31,7 +35,7 @@ console.log(this.handleClick)
         <div id="dog-summary-container">
           <h1>DOGGO:</h1>
           
-          <DogInfo/>
+          <DogInfo dog={this.state.clickedDog}/>
         </div>
       </div>
     );

@@ -7,11 +7,18 @@ console.log(props)
 		}
 
 		return (
+			props.dog.isGoodDog ?(
 			<div id="dog-info">
-				<img src="https://weloveanimals.me/wp-content/uploads/2017/10/gettyimages-590486672-e1508512743796.jpg" style={imgStyle} alt="pup pup"/>
-				<h2>Mr. Bonkers</h2>
+				<img src={props.dog.image} style={imgStyle} alt="pup pup"/>
+				<h2>{props.dog.name}</h2>
 				<button>Good Dog</button>
-			</div>
+				</div>)
+				:
+				(<div id="dog-info">
+				<img src="https://weloveanimals.me/wp-content/uploads/2017/10/gettyimages-590486672-e1508512743796.jpg" style={imgStyle} alt="pup pup"/>
+				<h2>{props.dog.name}</h2>
+				<button>Bad Dog</button>
+				</div>)
 		)
 
 }
