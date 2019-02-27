@@ -3,15 +3,20 @@ import DogItem from "./DogItem"
 
 
 const DogList = (props) => {
-  console.log(props.dogs)
+  // console.log(props.dogs)
   
-  let dogList = props.dogs.map((dogObj)=>{
-      console.log(dogObj)
-      return <DogItem key={dogObj.id} dogs={dogObj}/>
+  let handleClick = (dog) => {
+console.log('clicked the dog',dog)
+props.onClick(dog)
+
+  };
+  let dogItem = props.dogs.map((dogObj)=>{
+      // console.log(dogObj)
+      return <DogItem onClick={handleClick}key={dogObj.id} dogs={dogObj}/>
     })
   return (
     <div id="dog-list">
-      {dogList}
+      {dogItem}
       
       {/* <DogItem />
       <DogItem />

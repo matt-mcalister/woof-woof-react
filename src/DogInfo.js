@@ -1,7 +1,7 @@
 import React from "react"
 
 const DogInfo = (props) => {
-
+console.log(props)
 		const imgStyle = {
 			boxShadow: `0 0 30px 15px yellow, 0 0 50px 15px yellow, 0 0 75px 45px yellow`
 		}
