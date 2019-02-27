@@ -19,7 +19,7 @@ componentDidMount(){
   }))
 }
  handleClick = (dogObj) => {
-  console.log('in app', dogObj)
+  // console.log('in app', dogObj)
 this.setState({
   clickedDog: dogObj
 
@@ -27,7 +27,7 @@ this.setState({
 }
 
   render() {
-console.log(this.state)  
+// console.log(this.state)  
 
     return (
       <div>

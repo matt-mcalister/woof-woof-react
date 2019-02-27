@@ -1,9 +1,9 @@
 import React from "react"
 
 const DogItem = (props) => {
-	console.log(props)
+	// console.log(props)
 	let clickHandler = () => {
-		console.log(props.dogs)
+		// console.log(props.dogs)
 		props.onClick(props.dogs)
 	}
 	return (<span onClick={() => clickHandler()}>{props.dogs.name}</span>)
