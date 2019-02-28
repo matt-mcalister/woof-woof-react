@@ -45,8 +45,8 @@ console.log(props)
 			// 
 			props.changed.isGoodDog?
 			(<div id="dog-info">
-			<img src={props.changed.image} style={imgStyle} alt="pup pup"/>
-			<h2>{props.changed.name}</h2>
+			<img src={props.dog.image} style={imgStyle} alt="pup pup"/>
+			<h2>{props.dog.name}</h2>
 			<button onClick={() => clickHandler()}>Good Dog</button>
 			</div>)
 			:
@@ -55,14 +55,15 @@ console.log(props)
 			<div id="dog-info">
 				<img src={props.dog.image} style={imgStyle} alt="pup pup"/>
 				<h2>{props.dog.name}</h2>
-				<button onClick={() => clickHandler()}>BAd Dog</button>
+				<button onClick={() => clickHandler()}>Good Dog</button>
 				</div>)
 				:
 				(<div id="dog-info">
-				<img src={props.dog.image} style={imgStyle} alt="PLEASE SELECT A DOG FROM DOG BAR"/>
+				<img src={props.dog.image}  alt="PLEASE SELECT A DOG FROM DOG BAR"/>
 				<h2>{props.dog.name}</h2>
 				<button onClick={() => clickHandler()}> Bad Dog</button>
 				</div>))
+				
 				
 
 		
