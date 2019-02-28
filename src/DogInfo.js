@@ -1,7 +1,7 @@
 import React from "react"
 
 const DogInfo = (props) => {
-console.log(props.changed)
+console.log(props.changed.isGoodDog)
 		const imgStyle = {
 			boxShadow: `0 0 30px 15px yellow, 0 0 50px 15px yellow, 0 0 75px 45px yellow`
 		}
@@ -12,7 +12,15 @@ console.log(props.changed)
 		}
 
 		return (
-			props.dog.isGoodDog ?(
+			props.changed.isGoodDog?
+			(<div id="dog-info">
+			<img src={props.changed.image} style={imgStyle} alt="pup pup"/>
+			<h2>{props.changed.name}</h2>
+			<button onClick={() => clickHandler()}>Good Dog</button>
+			</div>)
+			:
+			
+			(props.dog.isGoodDog ?(
 			<div id="dog-info">
 				<img src={props.dog.image} style={imgStyle} alt="pup pup"/>
 				<h2>{props.dog.name}</h2>
@@ -23,7 +31,9 @@ console.log(props.changed)
 				<img src={props.dog.image} style={imgStyle} alt="PLEASE SELECT A DOG FROM DOG BAR"/>
 				<h2>{props.dog.name}</h2>
 				<button onClick={() => clickHandler()}>Bad Dog</button>
-				</div>)
+				</div>))
+				
+
 		)
 
 }
